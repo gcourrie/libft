@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcourrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:07:53 by gcourrie          #+#    #+#             */
-/*   Updated: 2016/02/18 15:00:02 by gcourrie         ###   ########.fr       */
+/*   Created: 2016/02/15 22:30:11 by gcourrie          #+#    #+#             */
+/*   Updated: 2016/02/15 22:34:41 by gcourrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char		*ft_strnew(size_t size)
+char		*ft_strjoin_free(char *s1, char *s2)
 {
 	char	*str;
 
-	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
+	if (s1 && !s2)
+		return (s1);
+	if (!s1 && s2)
+		return (s2);
+	if (!s1 && !s2)
 		return (NULL);
-	str[size] = '\0';
+	str = ft_strjoin(s1, s2);
+	free(s1);
+	free(s2);
 	return (str);
 }

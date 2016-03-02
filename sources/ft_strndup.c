@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcourrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:07:53 by gcourrie          #+#    #+#             */
-/*   Updated: 2016/02/18 15:00:02 by gcourrie         ###   ########.fr       */
+/*   Created: 2016/02/15 22:16:29 by gcourrie          #+#    #+#             */
+/*   Updated: 2016/02/15 22:27:11 by gcourrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char		*ft_strnew(size_t size)
+char		*ft_strndup(const char *str, int n, int i)
 {
-	char	*str;
+	char	*ret;
+	char	*tmp;
 
-	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
+	if (n >= i)
 		return (NULL);
-	str[size] = '\0';
-	return (str);
+	if (!(ret = (char *)malloc(sizeof(char) * (i - n + 1))))
+		return (NULL);
+	tmp = ret;
+	while (n < i && str[n])
+		*tmp++ = str[n++];
+	*tmp = '\0';
+	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: gcourrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:14:19 by gcourrie          #+#    #+#             */
-/*   Updated: 2015/11/30 22:55:48 by gcourrie         ###   ########.fr       */
+/*   Updated: 2016/02/18 14:47:52 by gcourrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define ABS(x) (((x) < 0) ? -(x) : (x))
+
 typedef struct		s_list
 {
 	void			*content;
@@ -24,11 +26,13 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+char				*ft_strjoin_free(char *s1, char *s2);
 void				*ft_memset(void *str, int c, size_t n);
 void				ft_bzero(void *s1, size_t n);
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strdup(const char *s);
+char				*ft_strndup(const char *s, int n, int i);
 size_t				ft_strlen(const char *s);
 void				ft_putchar(char c);
 void				ft_putstr(const char *s);
@@ -72,6 +76,7 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_memdel(void **ap);
 void				*ft_memalloc(size_t size);
 char				*ft_itoa(int nbr);
+char				*ft_itoa_base(long long n, int base, int cap);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strequ(char const *s1, char const *s2);

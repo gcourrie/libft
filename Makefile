@@ -6,7 +6,7 @@
 #    By: gcourrie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 16:16:15 by gcourrie          #+#    #+#              #
-#    Updated: 2015/12/02 18:28:16 by gcourrie         ###   ########.fr        #
+#    Updated: 2016/02/15 22:29:25 by gcourrie         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -73,7 +73,10 @@ SRC_NAME=		ft_putchar.c \
 				ft_lstdel.c \
 				ft_lstadd.c \
 				ft_lstiter.c \
-				ft_lstmap.c
+				ft_lstmap.c \
+				ft_itoa_base.c \
+				ft_strndup.c \
+				ft_strjoin_free.c
 
 OBJ_NAME=		$(SRC_NAME:.c=.o)
 

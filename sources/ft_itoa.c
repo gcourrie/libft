@@ -6,7 +6,7 @@
 /*   By: gcourrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 11:29:44 by gcourrie          #+#    #+#             */
-/*   Updated: 2015/12/02 19:18:44 by gcourrie         ###   ########.fr       */
+/*   Updated: 2016/02/18 15:37:57 by gcourrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static char		*ft_itoa_rec(int nbr, char *str)
 		str = ft_itoa_rec(nbr / 10, str);
 		str = ft_itoa_rec(nbr % 10, str);
 	}
+	*str = '\0';
 	return (str);
 }
 
