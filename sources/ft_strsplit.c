@@ -6,7 +6,7 @@
 /*   By: gcourrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 09:13:50 by gcourrie          #+#    #+#             */
-/*   Updated: 2015/12/02 18:48:36 by gcourrie         ###   ########.fr       */
+/*   Updated: 2016/03/23 16:56:07 by gcourrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static char		*ft_strtrim_c(const char *s, char c)
 			;
 		end++;
 	}
-	str = (char *)malloc(sizeof(char) * ((end - s) + 1));
+	str = (char *)ft_memalloc(sizeof(char) * ((end - s) + 1));
 	if (!str)
 		return (NULL);
 	ret = str;
@@ -74,7 +74,7 @@ char			**ft_strsplit(char const *s, char c)
 		while (*s2 == c && *s2)
 			s2++;
 	}
-	tab = (char **)malloc(sizeof(char *) * (tablen + 1));
+	tab = (char **)ft_memalloc(sizeof(char *) * (tablen + 1));
 	if (!tab)
 		return (NULL);
 	tab[tablen] = NULL;

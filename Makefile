@@ -6,7 +6,7 @@
 #    By: gcourrie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 16:16:15 by gcourrie          #+#    #+#              #
-#    Updated: 2016/02/15 22:29:25 by gcourrie         ###   ########.fr        #
+#    Updated: 2016/03/23 16:40:35 by gcourrie         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -17,6 +17,7 @@ SRC_PATH=		./sources/
 OBJ_PATH=		./objects/
 
 SRC_NAME=		ft_putchar.c \
+				ft_puttab.c \
 				ft_putstr.c \
 				ft_strcpy.c \
 				ft_strncpy.c \
@@ -76,7 +77,8 @@ SRC_NAME=		ft_putchar.c \
 				ft_lstmap.c \
 				ft_itoa_base.c \
 				ft_strndup.c \
-				ft_strjoin_free.c
+				ft_strjoin_free.c \
+				get_next_line.c
 
 OBJ_NAME=		$(SRC_NAME:.c=.o)
 
